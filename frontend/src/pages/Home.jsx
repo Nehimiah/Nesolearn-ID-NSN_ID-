@@ -122,8 +122,8 @@ const Home = () => {
                         viewport={{ once: false, amount: 0.1 }}
                         className='text-center text-3xl lg:text-4xl font-semibold mt-7  '
                     >
-                        Empower Your Future with
-                        <HighlightText text={"Coding Skills"} />
+                        Your Skills. Your Credentials.
+                        <HighlightText text={"Your Global Learning Identity"} />
                     </motion.div>
 
                     <motion.div
@@ -133,17 +133,17 @@ const Home = () => {
                         viewport={{ once: false, amount: 0.1 }}
                         className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-300'
                     >
-                        With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.
+                        A lifelong, blockchain-secured learning identity that empowers every learner to prove skills, unlock opportunities, and go global.
                     </motion.div>
 
 
                     <div className='flex flex-row gap-7 mt-8'>
                         <CTAButton active={true} linkto={"/signup"}>
-                            Learn More
+                            “Claim Your Nesolearn ID”
                         </CTAButton>
 
                         <CTAButton active={false} linkto={"/login"}>
-                            Book a Demo
+                            About Nesolearn
                         </CTAButton>
                     </div>
                 </div>
