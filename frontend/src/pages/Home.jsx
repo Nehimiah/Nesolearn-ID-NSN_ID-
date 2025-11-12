@@ -108,7 +108,7 @@ const Home = () => {
                                         transition-all duration-200 hover:scale-95 w-fit'>
                             <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px]
                               transition-all duration-200 group-hover:bg-richblack-900'>
-                                <p>Become an Instructor</p>
+                                <p>Claim Your Nesolearn ID → </p>
                                 <FaArrowRight />
                             </div>
                         </div>
@@ -133,13 +133,13 @@ const Home = () => {
                         viewport={{ once: false, amount: 0.1 }}
                         className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-300'
                     >
-                        A lifelong, blockchain-secured learning identity that empowers every learner to prove skills, unlock opportunities, and go global.
+                        Your lifelong, blockchain-secured digital identity that proves your skills, verifies achievements, and opens global opportunities.
                     </motion.div>
 
 
                     <div className='flex flex-row gap-7 mt-8'>
                         <CTAButton active={true} linkto={"/signup"}>
-                            “Claim Your Nesolearn ID”
+                            “Join the Nesolearn Waitlist”
                         </CTAButton>
 
                         <CTAButton active={false} linkto={"/login"}>
