@@ -156,13 +156,13 @@ const Home = () => {
                             position={"lg:flex-row"}
                             heading={
                                 <div className='text-3xl lg:text-4xl font-semibold'>
-                                    Unlock Your
-                                    <HighlightText text={"coding potential "} />
-                                    with our online courses
+                                    Unlock Your future and
+                                    <HighlightText text={" access global opportunities "} />
+                                    with Nesolearn ID
                                 </div>
                             }
                             subheading={
-                                "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
+                                "Nesolearn ID is your personal, blockchain-secured learning portfolio. It records every skill, project, and verified achievement you earn. Designed for learners, not institutions, it gives you full ownership and control of your educational journey."
                             }
                             ctabtn1={
                                 {
@@ -192,15 +192,15 @@ const Home = () => {
                             position={"lg:flex-row-reverse"}
                             heading={
                                 <div className="w-[100%] text-3xl lg:text-4xl font-semibold lg:w-[50%]">
-                                    Start
-                                    <HighlightText text={"coding in seconds"} />
+                                    Empower your
+                                    <HighlightText text={"skills and achievements"} />
                                 </div>
                             }
                             subheading={
-                                "Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
+                                "With Nesolearn ID, you receive Proof-of-Learning (PoL) credentials as Soulbound Certificates (SBCs) that are non-transferable, tamper-proof, and globally recognized. Milestone achievements are also minted as collectible NFT badges, creating a trusted, verifiable skill passport that opens doors to education, employment, and collaboration worldwide."
                             }
                             ctabtn1={{
-                                btnText: "Continue Lesson",
+                                btnText: "Claim Your Nesolearn ID",
                                 link: "/signup",
                                 active: true,
                             }}
@@ -218,13 +218,13 @@ const Home = () => {
                     {/* course slider */}
                     <div className='mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
                         <h2 className='text-white mb-6 text-2xl '>
-                            Popular Picks for You 🏆
+                            Courses to Boost Your Global Career
                         </h2>
                         <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
                     </div>
                     <div className=' mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
                         <h2 className='text-white mb-6 text-2xl '>
-                            Top Enrollments Today 🔥
+                            Most Learner Trusted Courses
                         </h2>
                         <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
                     </div>
@@ -234,66 +234,68 @@ const Home = () => {
                 </div>
 
                 {/*Section 2  */}
-                <div className='bg-pure-greys-5 text-richblack-700 '>
-                    <div className='homepage_bg h-[310px]'>
-                        <div className='w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-5 mx-auto'>
-                            <div className='h-[150px]'></div>
-                            <div className='flex flex-row gap-7 text-white '>
-                                <CTAButton active={true} linkto={"/signup"}>
-                                    <div className='flex items-center gap-3' >
-                                        Explore Full Catalog
-                                        <FaArrowRight />
-                                    </div>
-                                </CTAButton>
-                                <CTAButton active={false} linkto={"/signup"}>
-                                    <div>
-                                        Learn more
-                                    </div>
-                                </CTAButton>
-                            </div>
-                        </div>
+       <div className='bg-pure-greys-5 text-richblack-700 '>
+    <div className='homepage_bg h-[310px]'>
+        <div className='w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-5 mx-auto'>
+            <div className='h-[150px]'></div>
+            <div className='flex flex-row gap-7 text-white '>
+                <CTAButton active={true} linkto={"/signup"}>
+                    <div className='flex items-center gap-3' >
+                        Explore Full Catalog
+                        <FaArrowRight />
                     </div>
-
-                    <div className='mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7'>
-                        <div className='flex flex-col lg:flex-row gap-5 mb-10 mt-[95px]'>
-                            <div className='text-3xl lg:text-4xl font-semibold w-full lg:w-[45%]'>
-                                Get the Skills you need for a
-                                <HighlightText text={"Job that is in demand"} />
-                            </div>
-
-                            <div className='flex flex-col gap-10 w-full lg:w-[40%] items-start'>
-                                <div className='text-[16px]'>
-                                    The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
-                                </div>
-                                <CTAButton active={true} linkto={"/signup"}>
-                                    <div>
-                                        Learn more
-                                    </div>
-                                </CTAButton>
-                            </div>
-                        </div>
-
-
-                        {/* leadership */}
-                        <TimelineSection />
-
-                        <LearningLanguageSection />
-
+                </CTAButton>
+                <CTAButton active={false} linkto={"/signup"}>
+                    <div>
+                        Learn More About Nesolearn ID
                     </div>
+                </CTAButton>
+            </div>
+        </div>
+    </div>
 
+    <div className='mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7'>
+        <div className='flex flex-col lg:flex-row gap-5 mb-10 mt-[95px]'>
+            <div className='text-3xl lg:text-4xl font-semibold w-full lg:w-[45%]'>
+                Build Verified Skills That Open
+                <HighlightText text={"Global Opportunities"} />
+            </div>
+
+            <div className='flex flex-col gap-10 w-full lg:w-[40%] items-start'>
+                <div className='text-[16px]'>
+                    Every course you complete on Nesolearn adds verified credentials to your Nesolearn ID. Collect Soulbound Certificates, NFT badges, and Proof-of-Learning credentials that showcase your achievements worldwide.
                 </div>
+                <CTAButton active={true} linkto={"/signup"}>
+                    <div>
+                        Start Building Your Skills
+                    </div>
+                </CTAButton>
+            </div>
+        </div>
+
+        {/* leadership */}
+        <TimelineSection />
+
+        <LearningLanguageSection />
+
+    </div>
+</div>
 
 
                 {/*Section 3 */}
-                <div className='mt-14 w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
-                    <InstructorSection />
+             <div className='mt-14 w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
+    <InstructorSection />
 
-                    {/* Reviws from Other Learner */}
-                    <h1 className="text-center text-3xl lg:text-4xl font-semibold mt-8 flex justify-center items-center gap-x-3">
-                        Reviews from other learners <MdOutlineRateReview className='text-yellow-25' />
-                    </h1>
-                    <ReviewSlider />
-                </div>
+    <div className='text-center text-lg text-richblack-300 mb-4'>
+        See how learners around the world are building verified skills and unlocking opportunities with Nesolearn ID.
+    </div>
+
+    {/* Reviews from learners */}
+    <h1 className="text-center text-3xl lg:text-4xl font-semibold mt-8 flex justify-center items-center gap-x-3">
+        Reviews from Other Learners <MdOutlineRateReview className='text-yellow-25' />
+    </h1>
+    <ReviewSlider />
+</div>
 
                 {/*Footer */}
                 <Footer />
