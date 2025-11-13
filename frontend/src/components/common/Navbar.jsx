@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 import { Link, matchPath, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -83,7 +84,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className={`z-[10] flex h-14 w-full items-center justify-center border-b-[1px] border-b-[#2d5c3f]/30 translate-y-0 transition-all ${showNavbar} `} style={{ background: 'linear-gradient(to right, #3d7c52, #2d5c3f)' }}>
+        <nav className={`z-[10] flex h-14 w-full items-center justify-center border-b-[1px] border-b-gray-300 translate-y-0 transition-all ${showNavbar} `} style={{ backgroundColor: '#F0F0F0' }}>
              {/* <nav className={` fixed flex items-center justify-center w-full h-16 z-[10] translate-y-0 transition-all text-white ${showNavbar}`}> */}
             <div className='flex w-11/12 max-w-maxContent items-center justify-between '>
                 {/* logo */}
@@ -92,7 +93,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Nav Links - visible for only large devices*/}
-                <ul className='hidden sm:flex gap-x-6 text-white'>
+                <ul className='hidden sm:flex gap-x-6 text-black'>
                     {
                         NavbarLinks.map((link, index) => (
                             <li key={index}>
@@ -100,18 +101,18 @@ const Navbar = () => {
                                     link.title === "Catalog" ? (
                                         <div
                                             className={`group relative flex cursor-pointer items-center gap-1 ${matchRoute("/catalog/:catalogName")
-                                                ? "bg-white/20 backdrop-blur-sm text-white rounded-xl p-1 px-3"
-                                                : "text-white rounded-xl p-1 px-3 hover:bg-white/10"
+                                                ? "bg-[#4a9d63] text-white rounded-xl p-1 px-3"
+                                                : "text-black rounded-xl p-1 px-3"
                                                 }`}
                                         >
                                             <p>{link.title}</p>
                                             <MdKeyboardArrowDown />
                                             {/* drop down menu */}
                                             <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] 
-                                                    flex-col rounded-lg bg-white p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible 
-                                                    group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px] shadow-xl"
+                                                    flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible 
+                                                    group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]"
                                             >
-                                                <div className="absolute left-[50%] top-0 z-[100] h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-white"></div>
+                                                <div className="absolute left-[50%] top-0 z-[100] h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                                                 {loading ? (<p className="text-center ">Loading...</p>)
                                                     : subLinks.length ? (
                                                         <>
@@ -121,7 +122,7 @@ const Navbar = () => {
                                                                         .split(" ")
                                                                         .join("-")
                                                                         .toLowerCase()}`}
-                                                                    className="rounded-lg bg-transparent py-4 pl-4 hover:bg-gray-100"
+                                                                    className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
                                                                     key={i}
                                                                 >
                                                                     <p>{subLink.name}</p>
@@ -135,7 +136,7 @@ const Navbar = () => {
                                         </div>
                                     ) : (
                                         <Link to={link?.path}>
-                                            <p className={`${matchRoute(link?.path) ? "bg-white/20 backdrop-blur-sm text-white" : "text-white hover:bg-white/10"} rounded-xl p-1 px-3 transition-all duration-200`}>
+                                            <p className={`${matchRoute(link?.path) ? "bg-[#4a9d63] text-white" : "text-black"} rounded-xl p-1 px-3 `}>
                                                 {link.title}
                                             </p>
                                         </Link>)
@@ -152,9 +153,9 @@ const Navbar = () => {
                     {
                         user && user?.accountType !== "Instructor" && (
                             <Link to="/dashboard/cart" className="relative">
-                                <AiOutlineShoppingCart className="text-[2.35rem] text-white hover:bg-white/20 rounded-full p-2 duration-200" />
+                                <AiOutlineShoppingCart className="text-[2.35rem] text-black hover:bg-gray-300 rounded-full p-2 duration-200" />
                                 {totalItems > 0 && (
-                                    <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-white text-center text-xs font-bold text-[#3d7c52]">
+                                    <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-[#4a9d63] text-center text-xs font-bold text-white">
                                         {totalItems}
                                     </span>
                                 )}
@@ -164,8 +165,9 @@ const Navbar = () => {
                     {
                         token === null && (
                             <Link to="/login">
-                                <button className={` px-[12px] py-[8px] text-white rounded-md transition-all duration-200
-                                 ${matchRoute('/login') ? 'bg-white/20 backdrop-blur-sm border-2 border-white/40' : 'border border-white/30 hover:bg-white/10'} `}
+                                {/* <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md focus:outline-8 outline-yellow-50'> */}
+                                <button className={` px-[12px] py-[8px] text-black rounded-md 
+                                 ${matchRoute('/login') ? 'border-[2.5px] border-[#4a9d63]' : 'border border-gray-300 bg-white'} `}
                                 >
                                     Log in
                                 </button>
@@ -175,8 +177,9 @@ const Navbar = () => {
                     {
                         token === null && (
                             <Link to="/signup">
-                                <button className={` px-[12px] py-[8px] text-white rounded-md transition-all duration-200
-                                 ${matchRoute('/signup') ? 'bg-white/20 backdrop-blur-sm border-2 border-white/40' : 'border border-white/30 hover:bg-white/10'} `}
+                                {/* <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'> */}
+                                <button className={` px-[12px] py-[8px] text-black rounded-md 
+                                 ${matchRoute('/signup') ? 'border-[2.5px] border-[#4a9d63]' : 'border border-gray-300 bg-white'} `}
                                 >
                                     Sign Up
                                 </button>
