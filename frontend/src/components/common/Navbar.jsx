@@ -3,7 +3,6 @@ import { Link, matchPath, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import { NavbarLinks } from "../../../data/navbar-links"
-import studyNotionLogo from '../../assets/Logo/Logo-Full-Light.png'
 import { fetchCourseCategories } from './../../services/operations/courseDetailsAPI';
 
 import ProfileDropDown from '../core/Auth/ProfileDropDown'
@@ -89,7 +88,7 @@ const Navbar = () => {
             <div className='flex w-11/12 max-w-maxContent items-center justify-between '>
                 {/* logo */}
                 <Link to="/">
-                    <img src={studyNotionLogo} width={160} height={42} loading='lazy' />
+                    <img src="https://pub-b365ff8e20e448c3a7257b35173d9a38.r2.dev/Nesolearn%20ID%20images/3d_NSN_ID_logo-removebg-preview.png" width={160} height={42} loading='lazy' alt="Logo" />
                 </Link>
 
                 {/* Nav Links - visible for only large devices*/}
