@@ -9,8 +9,6 @@ import { setSignupData } from "../../../slices/authSlice"
 import { ACCOUNT_TYPE } from "../../../utils/constants"
 import Tab from "../../common/Tab"
 
-
-
 function SignupForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -95,7 +93,7 @@ function SignupForm() {
         <div className="flex gap-x-4">
           {/* First Name */}
           <label>
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-white/90">
               First Name <sup className="text-pink-200">*</sup>
             </p>
             <input
@@ -105,16 +103,13 @@ function SignupForm() {
               value={firstName}
               onChange={handleOnChange}
               placeholder="Enter first name"
-              style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-              className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5 outline-none"
+              className="w-full rounded-[0.5rem] backdrop-blur-md bg-white/10 border border-white/20 p-[12px] text-white placeholder:text-white/50 outline-none focus:ring-2 focus:ring-[#4a9d63] transition-all duration-300"
             />
           </label>
 
           {/* Last Name */}
           <label>
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-white/90">
               Last Name <sup className="text-pink-200">*</sup>
             </p>
             <input
@@ -124,17 +119,14 @@ function SignupForm() {
               value={lastName}
               onChange={handleOnChange}
               placeholder="Enter last name"
-              style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-              className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5 outline-none"
+              className="w-full rounded-[0.5rem] backdrop-blur-md bg-white/10 border border-white/20 p-[12px] text-white placeholder:text-white/50 outline-none focus:ring-2 focus:ring-[#4a9d63] transition-all duration-300"
             />
           </label>
         </div>
 
         {/* Email Address */}
         <label className="w-full">
-          <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+          <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-white/90">
             Email Address <sup className="text-pink-200">*</sup>
           </p>
           <input
@@ -144,18 +136,14 @@ function SignupForm() {
             value={email}
             onChange={handleOnChange}
             placeholder="Enter email address"
-            style={{
-              boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-            }}
-            className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5 outline-none"
+            className="w-full rounded-[0.5rem] backdrop-blur-md bg-white/10 border border-white/20 p-[12px] text-white placeholder:text-white/50 outline-none focus:ring-2 focus:ring-[#4a9d63] transition-all duration-300"
           />
         </label>
-
 
         <div className="flex gap-x-4">
           {/* Create Password */}
           <label className="relative">
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-white/90">
               Create Password <sup className="text-pink-200">*</sup>
             </p>
             <input
@@ -165,10 +153,7 @@ function SignupForm() {
               value={password}
               onChange={handleOnChange}
               placeholder="Enter Password"
-              style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-              className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] pr-10 text-richblack-5 outline-none"
+              className="w-full rounded-[0.5rem] backdrop-blur-md bg-white/10 border border-white/20 p-[12px] pr-10 text-white placeholder:text-white/50 outline-none focus:ring-2 focus:ring-[#4a9d63] transition-all duration-300"
             />
             <span
               onClick={() => setShowPassword((prev) => !prev)}
@@ -184,7 +169,7 @@ function SignupForm() {
 
           {/* Confirm Password  */}
           <label className="relative">
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-white/90">
               Confirm Password <sup className="text-pink-200">*</sup>
             </p>
             <input
@@ -194,10 +179,7 @@ function SignupForm() {
               value={confirmPassword}
               onChange={handleOnChange}
               placeholder="Confirm Password"
-              style={{
-                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-              }}
-              className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] pr-10 text-richblack-5 outline-none"
+              className="w-full rounded-[0.5rem] backdrop-blur-md bg-white/10 border border-white/20 p-[12px] pr-10 text-white placeholder:text-white/50 outline-none focus:ring-2 focus:ring-[#4a9d63] transition-all duration-300"
             />
             <span
               onClick={() => setShowConfirmPassword((prev) => !prev)}
@@ -212,10 +194,9 @@ function SignupForm() {
           </label>
         </div>
 
-
         <button
           type="submit"
-          className="mt-6 rounded-[8px] bg-yellow-50 py-[8px] px-[12px] font-medium text-richblack-900"
+          className="mt-6 w-full rounded-lg bg-gradient-to-r from-[#4a9d63] to-[#3d7c52] px-6 py-3 text-center text-sm font-bold text-white shadow-lg shadow-[#4a9d63]/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#4a9d63]/70 focus:outline-none focus:ring-2 focus:ring-[#4a9d63] focus:ring-offset-2"
         >
           Create Account
         </button>
