@@ -83,11 +83,11 @@ const Navbar = () => {
 
 
     return (
-        <nav className={`z-[10] flex h-14 w-full items-center justify-center border-b-[1px] border-b-[#2d5c3f]/30 translate-y-0 transition-all ${showNavbar} `} style={{ background: 'linear-gradient(to right, #3d7c52, #2d5c3f)' }}>
+        <nav className={`z-[10] flex h-16 w-full items-center justify-center border-b border-white/10 backdrop-blur-xl bg-gradient-to-r from-[#3d7c52]/80 via-[#2d5c3f]/70 to-white/5 translate-y-0 transition-all ${showNavbar} shadow-lg shadow-[#4a9d63]/20`}>
              {/* <nav className={` fixed flex items-center justify-center w-full h-16 z-[10] translate-y-0 transition-all text-white ${showNavbar}`}> */}
             <div className='flex w-11/12 max-w-maxContent items-center justify-between '>
                 {/* logo */}
-                <Link to="/">
+                <Link to="/" className="transform transition-transform duration-300 hover:scale-105">
                     <img src="https://pub-b365ff8e20e448c3a7257b35173d9a38.r2.dev/Nesolearn%20ID%20images/3d_NSN_ID_logo-removebg-preview.png" width={160} height={42} loading='lazy' alt="Logo" />
                 </Link>
 
@@ -100,18 +100,18 @@ const Navbar = () => {
                                     link.title === "Catalog" ? (
                                         <div
                                             className={`group relative flex cursor-pointer items-center gap-1 ${matchRoute("/catalog/:catalogName")
-                                                ? "bg-white/20 backdrop-blur-sm text-white rounded-xl p-1 px-3"
-                                                : "text-white rounded-xl p-1 px-3 hover:bg-white/10"
+                                                ? "bg-white/20 backdrop-blur-md text-white rounded-xl p-2 px-4 border border-white/30 shadow-lg"
+                                                : "text-white/90 rounded-xl p-2 px-4 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 transition-all duration-300"
                                                 }`}
                                         >
-                                            <p>{link.title}</p>
-                                            <MdKeyboardArrowDown />
+                                            <p className="font-medium">{link.title}</p>
+                                            <MdKeyboardArrowDown className="transition-transform group-hover:rotate-180 duration-300" />
                                             {/* drop down menu */}
                                             <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] 
-                                                    flex-col rounded-lg bg-white p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible 
-                                                    group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px] shadow-xl"
+                                                    flex-col rounded-2xl backdrop-blur-xl bg-white/95 border border-white/40 p-4 text-richblack-900 opacity-0 transition-all duration-300 group-hover:visible 
+                                                    group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px] shadow-2xl shadow-[#4a9d63]/30"
                                             >
-                                                <div className="absolute left-[50%] top-0 z-[100] h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-white"></div>
+                                                <div className="absolute left-[50%] top-0 z-[100] h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-white/95 backdrop-blur-xl border-l border-t border-white/40"></div>
                                                 {loading ? (<p className="text-center ">Loading...</p>)
                                                     : subLinks.length ? (
                                                         <>
@@ -121,7 +121,7 @@ const Navbar = () => {
                                                                         .split(" ")
                                                                         .join("-")
                                                                         .toLowerCase()}`}
-                                                                    className="rounded-lg bg-transparent py-4 pl-4 hover:bg-gray-100"
+                                                                    className="rounded-xl bg-transparent py-4 pl-4 hover:bg-gradient-to-r hover:from-[#4a9d63]/20 hover:to-transparent transition-all duration-300 font-medium"
                                                                     key={i}
                                                                 >
                                                                     <p>{subLink.name}</p>
@@ -135,7 +135,10 @@ const Navbar = () => {
                                         </div>
                                     ) : (
                                         <Link to={link?.path}>
-                                            <p className={`${matchRoute(link?.path) ? "bg-white/20 backdrop-blur-sm text-white" : "text-white hover:bg-white/10"} rounded-xl p-1 px-3 transition-all duration-200`}>
+                                            <p className={`${matchRoute(link?.path) 
+                                                ? "bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-lg" 
+                                                : "text-white/90 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20"} 
+                                                rounded-xl p-2 px-4 transition-all duration-300 font-medium`}>
                                                 {link.title}
                                             </p>
                                         </Link>)
@@ -151,10 +154,10 @@ const Navbar = () => {
                 <div className='flex gap-x-4 items-center'>
                     {
                         user && user?.accountType !== "Instructor" && (
-                            <Link to="/dashboard/cart" className="relative">
-                                <AiOutlineShoppingCart className="text-[2.35rem] text-white hover:bg-white/20 rounded-full p-2 duration-200" />
+                            <Link to="/dashboard/cart" className="relative group">
+                                <AiOutlineShoppingCart className="text-[2.35rem] text-white hover:bg-white/20 hover:backdrop-blur-md rounded-full p-2 duration-300 transform group-hover:scale-110" />
                                 {totalItems > 0 && (
-                                    <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-white text-center text-xs font-bold text-[#3d7c52]">
+                                    <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-white backdrop-blur-md text-center text-xs font-bold text-[#3d7c52] shadow-lg animate-pulse">
                                         {totalItems}
                                     </span>
                                 )}
@@ -164,8 +167,10 @@ const Navbar = () => {
                     {
                         token === null && (
                             <Link to="/login">
-                                <button className={` px-[12px] py-[8px] text-white rounded-md transition-all duration-200
-                                 ${matchRoute('/login') ? 'bg-white/20 backdrop-blur-sm border-2 border-white/40' : 'border border-white/30 hover:bg-white/10'} `}
+                                <button className={` px-5 py-2 text-white rounded-xl transition-all duration-300 font-medium transform hover:scale-105
+                                 ${matchRoute('/login') 
+                                    ? 'bg-white/20 backdrop-blur-md border-2 border-white/40 shadow-lg shadow-white/20' 
+                                    : 'border border-white/30 hover:bg-white/10 hover:backdrop-blur-md hover:border-white/40 hover:shadow-lg hover:shadow-white/10'} `}
                                 >
                                     Log in
                                 </button>
@@ -175,8 +180,10 @@ const Navbar = () => {
                     {
                         token === null && (
                             <Link to="/signup">
-                                <button className={` px-[12px] py-[8px] text-white rounded-md transition-all duration-200
-                                 ${matchRoute('/signup') ? 'bg-white/20 backdrop-blur-sm border-2 border-white/40' : 'border border-white/30 hover:bg-white/10'} `}
+                                <button className={` px-5 py-2 text-white rounded-xl transition-all duration-300 font-medium transform hover:scale-105
+                                 ${matchRoute('/signup') 
+                                    ? 'bg-white/20 backdrop-blur-md border-2 border-white/40 shadow-lg shadow-white/20' 
+                                    : 'border border-white/30 hover:bg-white/10 hover:backdrop-blur-md hover:border-white/40 hover:shadow-lg hover:shadow-white/10'} `}
                                 >
                                     Sign Up
                                 </button>
