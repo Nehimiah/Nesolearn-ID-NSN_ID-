@@ -83,7 +83,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className={`z-[10] flex h-14 w-full items-center justify-center border-b-[1px] border-b-gray-300 bg-[#F0F0F0] translate-y-0 transition-all ${showNavbar} `}>
+        <nav className={`z-[10] flex h-14 w-full items-center justify-center border-b-[1px] border-b-gray-300 translate-y-0 transition-all ${showNavbar} `} style={{ backgroundColor: '#F0F0F0' }}>
              {/* <nav className={` fixed flex items-center justify-center w-full h-16 z-[10] translate-y-0 transition-all text-white ${showNavbar}`}> */}
             <div className='flex w-11/12 max-w-maxContent items-center justify-between '>
                 {/* logo */}
@@ -100,7 +100,7 @@ const Navbar = () => {
                                     link.title === "Catalog" ? (
                                         <div
                                             className={`group relative flex cursor-pointer items-center gap-1 ${matchRoute("/catalog/:catalogName")
-                                                ? "bg-yellow-25 text-black rounded-xl p-1 px-3"
+                                                ? "bg-[#4a9d63] text-white rounded-xl p-1 px-3"
                                                 : "text-black rounded-xl p-1 px-3"
                                                 }`}
                                         >
@@ -135,7 +135,7 @@ const Navbar = () => {
                                         </div>
                                     ) : (
                                         <Link to={link?.path}>
-                                            <p className={`${matchRoute(link?.path) ? "bg-yellow-25 text-black" : "text-black"} rounded-xl p-1 px-3 `}>
+                                            <p className={`${matchRoute(link?.path) ? "bg-[#4a9d63] text-white" : "text-black"} rounded-xl p-1 px-3 `}>
                                                 {link.title}
                                             </p>
                                         </Link>)
@@ -154,7 +154,7 @@ const Navbar = () => {
                             <Link to="/dashboard/cart" className="relative">
                                 <AiOutlineShoppingCart className="text-[2.35rem] text-black hover:bg-gray-300 rounded-full p-2 duration-200" />
                                 {totalItems > 0 && (
-                                    <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
+                                    <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-[#4a9d63] text-center text-xs font-bold text-white">
                                         {totalItems}
                                     </span>
                                 )}
@@ -166,7 +166,7 @@ const Navbar = () => {
                             <Link to="/login">
                                 {/* <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md focus:outline-8 outline-yellow-50'> */}
                                 <button className={` px-[12px] py-[8px] text-black rounded-md 
-                                 ${matchRoute('/login') ? 'border-[2.5px] border-yellow-50' : 'border border-gray-300 bg-white'} `}
+                                 ${matchRoute('/login') ? 'border-[2.5px] border-[#4a9d63]' : 'border border-gray-300 bg-white'} `}
                                 >
                                     Log in
                                 </button>
@@ -178,7 +178,7 @@ const Navbar = () => {
                             <Link to="/signup">
                                 {/* <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'> */}
                                 <button className={` px-[12px] py-[8px] text-black rounded-md 
-                                 ${matchRoute('/signup') ? 'border-[2.5px] border-yellow-50' : 'border border-gray-300 bg-white'} `}
+                                 ${matchRoute('/signup') ? 'border-[2.5px] border-[#4a9d63]' : 'border border-gray-300 bg-white'} `}
                                 >
                                     Sign Up
                                 </button>
